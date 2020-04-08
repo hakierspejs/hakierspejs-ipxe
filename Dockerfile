@@ -4,11 +4,7 @@ RUN apt-get update && apt-get install -y build-essential liblzma-dev git mkisofs
 
 WORKDIR /work/
 
-RUN chown -R 1000:1000 /work
-
-RUN mkdir entry
-
-RUN chown -R 1000:1000 /work/entry/
+RUN chown -R 1000:1000 /work &&  mkdir entry && chown -R 1000:1000 /work/entry/
 
 USER 1000:1000
 

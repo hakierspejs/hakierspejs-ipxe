@@ -1,0 +1,15 @@
+#!ipxe
+
+dhcp
+
+menu Prosze wybrac opcje
+item cha OpenSUSE Leap
+item cos CentOS
+item fed Fedora Server
+item ubu Ubuntu Server
+item deb Debian
+item exit Wyjdz
+choose --default cha opt && goto ${opt}
+
+:exit
+exit

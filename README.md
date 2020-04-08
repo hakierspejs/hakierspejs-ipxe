@@ -1,7 +1,9 @@
-W tym repozytorium będzie nasz skrypt do ipxe w głównym katalogu i ipxe jako submoduł
+W tym repozytorium będzie nasz skrypt do ipxe i może w przyszłości generator repozytorium obrazów
 
-TODO: 
-Dokumentacja
-Rozwijanie
-Makefile
-Może Dockerfile do buildowania w przyszłości zamiast submodułu ipxe
+Wymagania do buildu:
+* docker
+
+Wymagania do testu obrazu:
+* qemu-system-x86_64
+
+Na razie builduje się tylko ISO, potem będzie target do buildowania ISO do testów i obrazu do PXE

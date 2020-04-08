@@ -11,5 +11,8 @@ item deb Debian
 item exit Wyjdz
 choose --default cha opt && goto ${opt}
 
+:debian
+sanboot http://ftp.icm.edu.pl/pub/Linux/debian-cd/10.3.0/amd64/iso-cd/debian-10.3.0-amd64-netinst.iso
+
 :exit
 exit

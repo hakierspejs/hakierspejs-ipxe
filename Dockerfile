@@ -12,10 +12,4 @@ RUN git clone git://git.ipxe.org/ipxe.git
 
 WORKDIR /work/ipxe/src
 
-USER root:root
-
 COPY scripts/build.sh .
-
-RUN chmod o+x build.sh
-
-USER 1000:1000

@@ -3,16 +3,24 @@
 dhcp
 
 menu Prosze wybrac opcje
-item cha OpenSUSE Leap
-item cos CentOS
-item fed Fedora Server
-item ubu Ubuntu Server
-item deb Debian
+item ubu Ubuntu 18.04 (netinstall)
+item deb Debian 10 (netinstall)
+item shell Shell iPXE
 item exit Wyjdz
-choose --default cha opt && goto ${opt}
+choose --default ubu opt && goto ${opt}
 
-:debian
-sanboot http://ftp.icm.edu.pl/pub/Linux/debian-cd/10.3.0/amd64/iso-cd/debian-10.3.0-amd64-netinst.iso
+:shell
+shell
+
+:ubu
+kernel http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/linux
+initrd http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/initrd.gz
+boot || goto :shell
+
+:deb
+kernel http://ftp.debian.org/debian/dists/buster/main/installer-amd64/current/images/netboot/debian-installer/amd64/linux
+initrd http://ftp.debian.org/debian/dists/buster/main/installer-amd64/current/images/netboot/debian-installer/amd64/initrd.gz
+boot || goto :shell
 
 :exit
 exit
